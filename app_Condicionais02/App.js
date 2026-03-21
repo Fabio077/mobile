@@ -1,0 +1,71 @@
+import React from 'react';
+import { View, Text, Image } from 'react-native';
+
+function App() {
+  let img1 = require("./img/image.jpg");
+  let img2 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm4de8puXpyUxQWnhV1a6FAlko9lO9NnvrPw&s'
+  let corFundo1 = 'rgba(0, 0, 0, 0.2)';
+  let corLetra1 = 'white';
+  let tamanhoLetra1 = 40;
+
+  let OPCAO = 1;
+
+  if (OPCAO == 2)
+    return (
+      <View style={{ flex: 1, backgroundColor: 'orange' }}>
+        <Image source={img1}
+          style={{ width: '100%', height: '100%' }} />
+        <View style={{
+          backgroundColor: corFundo1, left: 100, top: 100,
+          position: 'absolute',
+          padding: 10, borderRadius: 30
+        }}>
+          <Text style={{ color: corLetra1, fontSize: tamanhoLetra1 }}>OPÇÃO 1</Text>
+        </View>
+        <View style={{
+          backgroundColor: corFundo1, left: 100, top: 300,
+          position: 'absolute',
+                    padding: 10, borderRadius: 30
+        }}>
+          <Text style={{ color: corLetra1, fontSize: tamanhoLetra1 }}>OPÇÃO 2</Text>
+        </View>
+        <View style={{
+          backgroundColor: corFundo1, left: 130, top: 500,
+          position: 'absolute',
+          padding: 10, borderRadius: 30
+        }}>
+          <Text style={{ color: corLetra1, fontSize: tamanhoLetra1 }}>SAIR</Text>
+        </View>
+      </View>
+    );
+  else
+    return (
+      <View style={{ flex: 1, backgroundColor: 'orange' }}>
+        <Image source={{ uri: img2 }}
+          style={{ width: '100%', height: '100%' }} />
+        <View style={{
+          backgroundColor: 'rgba(255, 0, 0, 0.2)', left: 100, top: 100,
+          position: 'absolute',
+          padding: 10, borderRadius: 30
+        }}>
+          <Text style={{ color: 'white', fontSize: tamanhoLetra1 }}>OPÇÃO 1</Text>
+        </View>
+                <View style={{
+          backgroundColor: 'rgba(0, 255, 0, 0.2)', left: 100, top: 300,
+          position: 'absolute',
+          padding: 10, borderRadius: 30
+        }}>
+          <Text style={{ color: 'white', fontSize: tamanhoLetra1 }}>OPÇÃO 2</Text>
+        </View>
+        <View style={{
+          backgroundColor: 'rgba(0, 0, 255, 0.2)', left: 120, top: 550,
+          position: 'absolute',
+          padding: 10, borderRadius: 30
+        }}>
+          <Text style={{ color: 'white', fontSize: tamanhoLetra1 }}>SAIR</Text>
+        </View>
+      </View>
+    );
+}
+
+export default App;
