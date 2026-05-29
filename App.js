@@ -1,60 +1,39 @@
+
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function App() {
+import HomeScreen from './src/Telas/HomeScreen';
+import Tela01 from './src/Telas/Tela01';
+import Tela02 from './src/Telas/Tela02';
+import Tela03 from './src/Telas/Tela03';
 
-    let autor = "Fabio Rodrigues" ;
-    let data = "15/05/2026";
-    const dados = [
-        { id: '1', nome: 'João' },
-        { id: '2', nome: 'Maria' },
-        { id: '3', nome: 'Pedro' },
-        { id: '4', nome: 'Ana' }
-    ];
+const Stack = createNativeStackNavigator();
 
-    function recuperarId(item){
-        return item.id;
-    }
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Principal"
+          component={HomeScreen}
+        />
 
-    function mostrarItem({ item }){
-        return(
-            <Text style={{ fontSize: 18 }}>
-                {item.nome}
-            </Text>
-        )
-    }
+        <Stack.Screen
+          name="Tela01"
+          component={Tela01}
+        />
 
-    return (
+        <Stack.Screen
+          name="Tela02"
+          component={Tela02}
+        />
 
-        <View id='fundo' style={{ padding: 20, backgroundColor:'skyblue', flex:1 }}>
-            <View id='cabecalho' style={{ backgroundColor:'powderblue', flex:0.1,
-                justifyContent:'center', alignItems:'center',
-                borderRadius:25, marginBottom:10
-            }}>
-                <Text style={{fontSize:36, color:'darkred'}} >COMPONENTE LISTA</Text>
-            </View>
-
-            <View id='conteudo' style={{ backgroundColor:'lightgray', flex:0.6,
-                justifyContent:'center', alignItems:'center',
-                borderRadius:25, marginTop:10
-            }}>
-                <FlatList style={{backgroundColor:'white' , width:'80%', padding:20, marginVertical:10}}
-                    data={dados}
-                    keyExtractor={recuperarId}
-                    renderItem={mostrarItem}
-                />
-            </View>
-
-            <View id='Rodape'style={{ backgroundColor:'powderblue', flex:0.1,
-                justifyContent:'space-around', alignItems:'center',
-                borderRadius:25, marginTop:10, flexDirection:'row'
-            }}>
-                <Text style={{fontSize:20}}>{autor}</Text>
-                <Text style={{fontSize:20}}>{data}</Text>
-            </View>
-
-        </View>
-    )
+        <Stack.Screen
+          name="Tela03"
+          component={Tela03}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
-
-export default App
