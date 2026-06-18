@@ -1,3 +1,4 @@
+// Copied App.js (main) into App08_StackNav_03
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
